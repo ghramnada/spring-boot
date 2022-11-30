@@ -1,0 +1,22 @@
+package tn.enis.demo.entities;
+
+import java.io.Serializable;
+
+public class EnseignantChercheur extends Membre implements Serializable{
+	
+	private String Grade;
+	private String Etablissement;
+	private String Sujet;
+	
+	public EnseignantChercheur(){ super();}
+	
+	public EnseignantChercheur(Long id, String cin, String nom, String prenom, java.util.Date date, byte[] photo,
+			String cv, String email, String password,String grade, String etablissement, String sujet) {
+		super(id, cin, nom, prenom, date, photo, cv, email, password);
+		// TODO Auto-generated constructor stub
+		Grade = grade;
+		Etablissement = etablissement;
+		Sujet = sujet;
+	}
+	
+}

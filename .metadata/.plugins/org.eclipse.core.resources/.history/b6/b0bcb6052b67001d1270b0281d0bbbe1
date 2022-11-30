@@ -1,0 +1,5 @@
+package tn.enis.demo.dao;
+
+public interface EtudiantRepository {
+
+}

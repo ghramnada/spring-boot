@@ -1,0 +1,102 @@
+package tn.enis.demo.entities;
+
+import java.io.Serializable;
+import java.util.Date;
+
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.DiscriminatorType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+
+@Entity @Inheritance(strategy=InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name= "type_mbr",discriminatorType=DiscriminatorType.STRING, length = 3)
+public abstract class Membre implements Serializable{
+@javax.persistence.Id
+@GeneratedValue(strategy=GenerationType.IDENTITY)
+private Long Id;
+private String Cin;
+private String Nom;
+private String prenom;
+private Date Date;
+private byte[] Photo;
+private String Cv;
+private String Email;
+private String password;
+
+public Membre() { super();  
+//celui qui va créer table dans la base
+};
+public Membre(Long id, String cin, String nom, String prenom, java.util.Date date, byte[] photo, String cv,
+		String email, String password) {
+	super();
+	Id = id;
+	Cin = cin;
+	Nom = nom;
+	this.prenom = prenom;
+	Date = date;
+	Photo = photo;
+	Cv = cv;
+	Email = email;
+	this.password = password;
+}
+
+
+public Long getId() {
+	return Id;
+}
+public void setId(Long id) {
+	Id = id;
+}
+public String getCin() {
+	return Cin;
+}
+public void setCin(String cin) {
+	Cin = cin;
+}
+public String getNom() {
+	return Nom;
+}
+public void setNom(String nom) {
+	Nom = nom;
+}
+public String getPrenom() {
+	return prenom;
+}
+public void setPrenom(String prenom) {
+	this.prenom = prenom;
+}
+public Date getDate() {
+	return Date;
+}
+public void setDate(Date date) {
+	Date = date;
+}
+public byte[] getPhoto() {
+	return Photo;
+}
+public void setPhoto(byte[] photo) {
+	Photo = photo;
+}
+public String getCv() {
+	return Cv;
+}
+public void setCv(String cv) {
+	Cv = cv;
+}
+public String getEmail() {
+	return Email;
+}
+public void setEmail(String email) {
+	Email = email;
+}
+public String getPassword() {
+	return password;
+}
+public void setPassword(String password) {
+	this.password = password;
+}
+
+}

@@ -1,0 +1,20 @@
+package tn.enis.demo.entities;
+
+import java.io.Serializable;
+
+public class EnseignantChercheur extends Membre implements Serializable{
+	
+	private String Grade;
+	private String Etablissement;
+	private String Sujet;
+	
+	public EnseignantChercheur(){ super();}
+
+	public EnseignantChercheur(String grade, String etablissement, String sujet) {
+		super();
+		Grade = grade;
+		Etablissement = etablissement;
+		Sujet = sujet;
+	}
+	
+}

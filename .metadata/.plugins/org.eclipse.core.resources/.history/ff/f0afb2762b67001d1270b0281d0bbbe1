@@ -1,0 +1,14 @@
+package tn.enis.demo.dao;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+
+import antlr.collections.List;
+import tn.enis.demo.entities.Membre;
+
+public interface MembreRepository extends JpaRepository<Membre,
+Long> {
+	Membre findByCin(String cin);
+	List<Membre>findByNomStartingWith(String caractere);
+	Membre findByEmail(String email);
+}
